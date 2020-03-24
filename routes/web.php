@@ -1,8 +1,8 @@
 <?php
 
-Route::get('/', function () {
-    return view('frontend.home');
-});
+// Route::get('/', function () {
+//     return view('frontend.home');
+// });
 
    Route::get('admin', 'AdminController@index')->name('admin');
    Route::get('home', 'HomeController@index');

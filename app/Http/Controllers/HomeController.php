@@ -19,9 +19,7 @@ class HomeController extends Controller
         $profiles = Profile::find(1);
         $properties = Property::paginate(10);
         $types = Type::all();
-       
-        dd($agents);
-
+    
         return view('frontend.home', ['agents' => $agents]);
     }
 

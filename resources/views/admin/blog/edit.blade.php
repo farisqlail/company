@@ -23,7 +23,9 @@
 
                     <div class="form-group">
                         <label for="">Deskripsi Blog</label>
-                    <textarea class="form-control" name="content" value="{{ $blog->deskripsi }}" rows="3"></textarea>
+                    <textarea class="form-control" name="deskripsi" rows="3">
+                        {{ $blog->deskripsi }}
+                    </textarea>
                     </div>
 
                     <div class="form-group">
@@ -43,12 +45,9 @@
     </div>
 
 
-@endsection
-@section('script')
-
-<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace(' deskripsi ');
-</script>
+    <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'deskripsi' );
+    </script>
 
 @endsection

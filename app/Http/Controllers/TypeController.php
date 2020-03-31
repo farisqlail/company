@@ -68,9 +68,11 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Type $type)
+    public function edit($id)
     {
-        return view('admin.property.typeEdit');
+        $type = Type::find($id);
+
+        return view('admin.property.typeEdit', ['type' => $type]);
     }
 
     /**
@@ -82,11 +84,11 @@ class TypeController extends Controller
      */
     public function update(Type $type)
     {
-        Alert::success('Success', 'Behasil Diupadte');
+        Alert::success('Success', 'Behasil Diupdate');
 
         $type->update([
             'name' => request('name'),
-            'slug' => str_slu(request('name'))
+            'slug' => str_slug(request('name'))
         ]);
 
         return redirect()->route('type.index');

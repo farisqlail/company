@@ -31,7 +31,7 @@
                
                   <button type="button" class="btn btn-danger deleteType" data-id="{{$type->id}}">Hapus</button>
           
-                  <a href="{{ route('type.edit', $type) }}" class="btn btn-primary">Edit</a>
+                  <a href="{{ route('type.edit', [$type->id]) }}" class="btn btn-primary">Edit</a>
                 </td>
               </tr>
               @endforeach

@@ -33,7 +33,7 @@
           @foreach ($properties as $property)
           <tr>
             <td>{{ str_limit($property->title, 30) }}</td>
-            <td>{{ str_limit($property->content, 100) }}</td>
+            <td>{{ str_limit($property->deskripsi, 30) }}</td>
             <td>{{ $property->type->name }}</td>
             <td>Rp.{{ number_format($property->harga,2) }}</td>
             <td><img src="{{ asset('storage/'.$property->image) }}" height="128" alt=""></td>

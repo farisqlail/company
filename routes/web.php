@@ -1,11 +1,11 @@
 <?php
 
-// Route::get('/', function () {
+Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/home', function () {
 //     return view('frontend.home');
 // });
 
    Route::get('admin', 'AdminController@index')->name('admin');
-   Route::get('home', 'HomeController@index');
    Auth::routes();
 
     Route::name('admin')->group(function () {

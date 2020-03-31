@@ -20,7 +20,7 @@ class HomeController extends Controller
         $properties = Property::paginate(10);
         $types = Type::all();
     
-        return view('frontend.home', ['agents' => $agents]);
+        return view('frontend.home', ['agents' => $agents, 'blogs' => $blogs, 'profiles' => $profiles, 'properties' => $properties, 'types' => $types]);
     }
 
     public function create()

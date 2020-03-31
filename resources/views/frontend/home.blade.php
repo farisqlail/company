@@ -35,7 +35,7 @@
           <li><a href="#properties">Properties</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#blogs">Blogs</a></li>
-          <li><a href="#agent">Agent</a></li>
+          <li><a href="#agents">Agent</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -52,8 +52,7 @@
         <div class="row">
           <div class="col-md-12">
             <h3 class="section-title">About Us</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
+            <div class="section-title-divider"></div><br>
           </div>
         </div>
       </div>
@@ -67,8 +66,7 @@
           <div class="col-md-6 about-content">
             <h2 class="about-title">We provide great services and ideass</h2>
             <p class="about-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-              in reprehenderit in voluptate
+             {{$profiles->about}}
             </p>
           </div>
         </div>
@@ -81,83 +79,23 @@
             <div class="row">
               <div class="col-md-12">
                 <h3>Properties</h3>
-                <div class="section-title-divider"></div>
-                <p class="section-description">Si stante, hoc natura videlicet vult, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
+                <div class="section-title-divider"></div><br>
               </div>
             </div>
     
             <div class="row">
+              @foreach ($properties as $property)
+                  
               <div class="col-md-3">
-                <a class="properties-item venobox" style="background-image: url({{ asset('imperial/assets/img/portfolio-1.jpg')}});" href="{{ asset('imperial/assets/img/portfolio-1.jpg')}}" data-gall="portfolioGallery">
+                <a class="properties-item venobox" style="background-image: url({{ asset('storage/'.$property->image) }});" href="{{ asset('storage/'.$property->image) }}" data-gall="portfolioGallery">
                   <div class="details">
-                    <h4>Properties</h4>
-                    <span>Alored dono par</span>
+                    <h4>{{ $property->title }}</h4>
+                  <span>{{ $property->type->name }}</span>
                   </div>
                 </a>
               </div>
-    
-              <div class="col-md-3">
-                <a class="properties-item venobox" style="background-image: url({{ asset('imperial/assets/img/portfolio-2.jpg')}});" href="{{ asset('imperial/assets/img/portfolio-2.jpg')}}" data-gall="portfolioGallery">
-                  <div class="details">
-                    <h4>Properties</h4>
-                    <span>Alored dono par</span>
-                  </div>
-                </a>
-              </div>
-    
-              <div class="col-md-3">
-                <a class="properties-item venobox" style="background-image: url({{ asset('imperial/assets/img/portfolio-3.jpg')}});" href="{{ asset('imperial/assets/img/portfolio-3.jpg')}}" data-gall="portfolioGallery">
-                  <div class="details">
-                    <h4>Properties</h4>
-                    <span>Alored dono par</span>
-                  </div>
-                </a>
-              </div>
-    
-              <div class="col-md-3">
-                <a class="properties-item venobox" style="background-image: url({{ asset('imperial/assets/img/portfolio-4.jpg')}});" href="{{ asset('imperial/assets/img/portfolio-4.jpg')}}" data-gall="portfolioGallery">
-                  <div class="details">
-                    <h4>Properties</h4>
-                    <span>Alored dono par</span>
-                  </div>
-                </a>
-              </div>
-    
-              <div class="col-md-3">
-                <a class="properties-item venobox" style="background-image: url({{ asset('imperial/assets/img/portfolio-5.jpg')}});" href="{{ asset('imperial/assets/img/portfolio-5.jpg')}}" data-gall="portfolioGallery">
-                  <div class="details">
-                    <h4>Properties</h4>
-                    <span>Alored dono par</span>
-                  </div>
-                </a>
-              </div>
-    
-              <div class="col-md-3">
-                <a class="properties-item venobox" style="background-image: url({{ asset('imperial/assets/img/portfolio-6.jpg')}});" href="{{ asset('imperial/assets/img/portfolio-6.jpg')}}" data-gall="portfolioGallery">
-                  <div class="details">
-                    <h4>Properties</h4>
-                    <span>Alored dono par</span>
-                  </div>
-                </a>
-              </div>
-    
-              <div class="col-md-3">
-                <a class="properties-item venobox" style="background-image: url({{ asset('imperial/assets/img/portfolio-7.jpg')}});" href="{{ asset('imperial/assets/img/portfolio-7.jpg')}}" data-gall="portfolioGallery">
-                  <div class="details">
-                    <h4>Properties</h4>
-                    <span>Alored dono par</span>
-                  </div>
-                </a>
-              </div>
-    
-              <div class="col-md-3">
-                <a class="properties-item venobox" style="background-image: url({{ asset('imperial/assets/img/portfolio-8.jpg')}});" href="{{ asset('imperial/assets/img/portfolio-8.jpg')}}" data-gall="portfolioGallery">
-                  <div class="details">
-                    <h4>Properties</h4>
-                    <span>Alored dono par</span>
-                  </div>
-                </a>
-              </div>
+              
+              @endforeach
     
             </div>
           </div>
@@ -215,43 +153,22 @@
         <div class="row">
           <div class="col-md-12">
             <h3 class="section-title">Blogs</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+            <div class="section-title-divider"></div><br>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-3">
-            <div class="blog-item">
-              <div class="pic"><img src="{{ asset('imperial/assets/img/team-1.jpg')}}" alt=""></div>
-              <h4>Walter White</h4>
-              <span>Category</span>
-            </div>
-          </div>
+          @foreach ($blogs as $blog)
 
           <div class="col-md-3">
             <div class="blog-item">
-              <div class="pic"><img src="{{ asset('imperial/assets/img/team-2.jpg')}}" alt=""></div>
-              <h4>Sarah Jhinson</h4>
+              <div class="pic"><img src="{{ asset('storage/'.$blog->image) }}" alt=""></div>
+              <h4>{{ $blog->title }}</h4>
               <span>Category</span>
             </div>
           </div>
-
-          <div class="col-md-3">
-            <div class="blog-item">
-              <div class="pic"><img src="{{ asset('imperial/assets/img/team-3.jpg')}}" alt=""></div>
-              <h4>William Anderson</h4>
-              <span>Category</span>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="blog-item">
-              <div class="pic"><img src="{{ asset('imperial/assets/img/team-4.jpg')}}" alt=""></div>
-              <h4>Amanda Jepson</h4>
-              <span>Category</span>
-            </div>
-          </div>
+          
+          @endforeach
 
         </div>
       </div>
@@ -276,60 +193,23 @@
         <section id="agents">
           <div class="container wow fadeInUp">
             <div class="row">
-              @foreach ($agents as $agent)
-                  
+              
               <div class="col-md-12">
                 <h3 class="section-title">Agents</h3>
-                <div class="section-title-divider"></div>
-                <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                <div class="section-title-divider"></div><br>
               </div>
             </div>
-    
+            
             <div class="row">
+              @foreach ($agents as $agent)
               <div class="col-md-3">
                 <div class="member">
-                  <div class="pic"><img src="{{ asset('imperial/assets/img/team-1.jpg')}}" alt=""></div>
+                  <div class="pic"><img src="{{ asset('storage/'.$agent->image) }}" alt=""></div>
                 <h4>{{ $agent->name }}</h4>
-                  <span>Category</span>
+                <span>{{ $agent->jabatan }}</span>
+                <span>{{ $agent->email }}</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-phone"></i></a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col-md-3">
-                <div class="member">
-                  <div class="pic"><img src="{{ asset('imperial/assets/img/team-2.jpg')}}" alt=""></div>
-                  <h4>Sarah Jhinson</h4>
-                  <span>Category</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-phone"></i></a>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="col-md-3">
-                <div class="member">
-                  <div class="pic"><img src="{{ asset('imperial/assets/img/team-3.jpg')}}" alt=""></div>
-                  <h4>William Anderson</h4>
-                  <span>Category</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-phone"></i></a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="col-md-3">
-                <div class="member">
-                  <div class="pic"><img src="{{ asset('imperial/assets/img/team-4.jpg')}}" alt=""></div>
-                  <h4></h4>
-                  <span>Category</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-phone"></i></a>
+                    <a href="https://wa.me/{{ $agent->telp }}"><i class="fa fa-phone"></i></a>
                   </div>
                 </div>
               </div>
@@ -355,17 +235,17 @@
             <div class="info">
               <div>
                 <i class="fa fa-map-marker"></i>
-              <p></p>
+              <p>{{ $profiles->alamat }}</p>
               </div>
 
               <div>
                 <i class="fa fa-envelope"></i>
-                <p>info@example.com</p>
+                <p>{{$profiles->email}}</p>
               </div>
 
               <div>
                 <i class="fa fa-phone"></i>
-                <p>+1 5589 55488 55s</p>
+                <p>+{{$profiles->telp}}</p>
               </div>
 
             </div>

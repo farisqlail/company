@@ -12,12 +12,13 @@
             </div>
             <div class="card-body">
 
-            <form action="{{ route('type.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('type.update', [$type->id]) }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                {{ method_field('PATCH') }}
 
                     <div class="form-goup">
                         <label for="">Type</label>
-                    <input type="text" name="name" value="{{ $type->name }}" required class="form-control">
+                        <input type="text" name="name" value="{{ $type->name }}" required class="form-control">
                     </div><br><br>
 
                     <div class="form-group">

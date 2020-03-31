@@ -12,19 +12,19 @@
             </div>
             <div class="card-body">
 
-            <form action="{{ route('blog.update', $blog) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('blog.update', [$blogs->id]) }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}
 
                     <div class="form-goup">
                         <label for="">Judul Blog</label>
-                    <input type="text" name="title" value="{{ $blog->title }}" class="form-control">
+                    <input type="text" name="title" value="{{ $blogs->title }}" class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="">Deskripsi Blog</label>
                     <textarea class="form-control" name="deskripsi" rows="3">
-                        {{ $blog->deskripsi }}
+                        {{ $blogs->deskripsi }}
                     </textarea>
                     </div>
 

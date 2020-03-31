@@ -73,9 +73,9 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit($id)
     {
-        $blogs = Blog::all();
+        $blogs = Blog::find($id);
 
         return view('admin.blog.edit', compact('blogs'));
     }

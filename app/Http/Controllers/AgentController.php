@@ -65,14 +65,14 @@ class AgentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Agent $agent)
+    public function edit($id)
     {
-        $agents = Agent::all();
+        $agents = Agent::find($id);
 
         return view('admin.agents.edit', compact('agents'));
     }
 
-    public function update(Agents $agent)
+    public function update(Agent $agent)
     {
         
         if($agent->image){

@@ -40,7 +40,9 @@
 
                     <div class="form-group">
                         <label for="">Deskripsi Property</label>
-                        <textarea class="form-control" name="deskripsi" rows="3"></textarea>
+                        <textarea class="form-control" name="deskripsi" rows="3">
+                            {{ $property->deskripsi }}
+                        </textarea>
                     </div>
 
                     <div class="form-group">

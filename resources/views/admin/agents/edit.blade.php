@@ -19,22 +19,22 @@
 
                     <div class="form-goup">
                         <label for="">Nama</label>
-                    <input type="text" name="{{ $agents->name }}" class="form-control" required>
+                        <input type="text" name="name" value="{{ $agents->name }}" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Jabatan</label>
-                        <input type="text" name="{{$agents->jabatan}}" class="form-control" required>
+                        <input type="text" name="jabatan" value="{{$agents->jabatan}}" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">Email</label>
-                        <input type="email" name="{{$agents->email}}" class="form-control" required>
+                        <input type="email" name="email" value="{{$agents->email}}" class="form-control" required>
                     </div>
 
                     <div class="form-group">
                         <label for="">No Telepon</label>
-                        <input type="number" name="{{$agents->telp}}" class="form-control" required>
+                        <input type="number" name="telp" value="{{$agents->telp}}" class="form-control" required>
                     </div>
 
                     <div class="form-group">

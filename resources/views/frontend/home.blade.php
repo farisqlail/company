@@ -89,7 +89,7 @@
               <div class="col-md-3">
                 <a class="properties-item venobox" style="background-image: url({{ asset('storage/'.$property->image) }});" href="{{ asset('storage/'.$property->image) }}" data-gall="portfolioGallery">
                   <div class="details">
-                    <h4>{{ $property->title }}</h4>
+                    <h4>{{ str_limit($property->title, 40) }}</h4>
                   <span>{{ $property->type->name }}</span>
                   </div>
                 </a>
@@ -97,6 +97,9 @@
               
               @endforeach
     
+              <div class="loadMore ml-auto">
+                <a href=""><i class="fa fa-arrow-right fa-2x"></i></a>
+              </div>
             </div>
           </div>
         </section><!-- End Properties Section -->
@@ -107,42 +110,27 @@
         <div class="row">
           <div class="col-md-12">
             <h3 class="section-title">Our Services</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+            <div class="section-title-divider"></div><br>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-4 service-item">
             <div class="service-icon"><i class="fa fa-desktop"></i></div>
-            <h4 class="service-title"><a href="">Lorem Ipsum</a></h4>
+            <h4 class="service-title"><a href="">FREE REGISTRATION NO HIDDEN FEES</a></h4>
             <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
           </div>
           <div class="col-md-4 service-item">
             <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
-            <h4 class="service-title"><a href="">Dolor Sitema</a></h4>
+            <h4 class="service-title"><a href="">OFFICES IN 4 LOCATIONS</a></h4>
             <p class="service-description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
           </div>
           <div class="col-md-4 service-item">
             <div class="service-icon"><i class="fa fa-paper-plane"></i></div>
-            <h4 class="service-title"><a href="">Sed ut perspiciatis</a></h4>
+            <h4 class="service-title"><a href="">Free Property Valuation</a></h4>
             <p class="service-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
           </div>
-          <div class="col-md-4 service-item">
-            <div class="service-icon"><i class="fa fa-photo"></i></div>
-            <h4 class="service-title"><a href="">Magni Dolores</a></h4>
-            <p class="service-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
-          <div class="col-md-4 service-item">
-            <div class="service-icon"><i class="fa fa-road"></i></div>
-            <h4 class="service-title"><a href="">Nemo Enim</a></h4>
-            <p class="service-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
-          <div class="col-md-4 service-item">
-            <div class="service-icon"><i class="fa fa-shopping-bag"></i></div>
-            <h4 class="service-title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="service-description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-          </div>
+
         </div>
       </div>
     </section><!-- End Services Section -->
@@ -163,13 +151,16 @@
           <div class="col-md-3">
             <div class="blog-item">
               <div class="pic"><img src="{{ asset('storage/'.$blog->image) }}" alt=""></div>
-              <h4>{{ $blog->title }}</h4>
+              <h4>{{ str_limit($blog->title, 30) }}</h4>
               <span>Category</span>
             </div>
           </div>
           
           @endforeach
 
+          <div class="loadMore mx-auto" style="margin-top: 20px;">
+            <a href="" class="text-dark"><i class="fa fa-angle-double-down fa-3x"></i></a>
+          </div>
         </div>
       </div>
     </section><!-- End Blogs Section -->
@@ -179,11 +170,11 @@
       <div class="container wow fadeInUp">
         <div class="row">
           <div class="col-md-8">
-            <h3 class="subscribe-title">Subscribe For Updates</h3>
-            <p class="subscribe-text">Join our 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
+            <h3 class="subscribe-title">Buy On Us</h3>
+            <p class="subscribe-text">Buy your properties all you need on Agentprops, and more properties contact  us.</p>
           </div>
           <div class="col-md-4 subscribe-btn-container">
-            <a class="subscribe-btn" href="#">Subscribe Now</a>
+            <a class="subscribe-btn" href="#contact">Subscribe Now</a>
           </div>
         </div>
       </div>
@@ -225,8 +216,7 @@
         <div class="row">
           <div class="col-md-12">
             <h3 class="section-title">Contact Us</h3>
-            <div class="section-title-divider"></div>
-            <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+            <div class="section-title-divider"></div><br>
           </div>
         </div>
 
